@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Filmothèque</title>
+<link rel="icon" th:href="@{/img/logoENI.png}" />
+<link rel="stylesheet" th:href="@{/css/style.css}" />
+<link rel="stylesheet" th:href="@{/css/tp-contexte.css}" />
+<link
+	href="https://fonts.googleapis.com/css2?family=Eater&family=Potta+One&family=Rubik+Glitch&display=swap"
+	rel="stylesheet">
+</head>
+<div th:replace="~{fragments/fragment-entete::entete}"></div>
+<body>
+
+	<form action="/films/detail" method="post">
+		<h1>Détail du film</h1>
+		<ul>
+			<li><label for="idGenre">Genre : </label> <input type="text"
+				name="genre" th:value="${films.genre.titre}" /></li>
+			<li><label for="idAnnee">Année : </label> <input type="text"
+				name="annee" th:value="${films.annee}" /></li>
+			<li><label for="idTitre">Titre : </label> <input type="text"
+				name="titre" th:value="${films.titre}" /></li>
+			<li><label for="idRealisateur">Réalisateur : </label> <input
+				type="text" name="realisateur"
+				th:value="${films.realisateur.nom}+' '+${films.realisateur.prenom}" />
+			</li>
+			<li><label for="idDuree">Durée : </label> <input type="text"
+				name="duree" th:value="${films.duree}" /></li>
+			<li><label for="acteurs">Acteur(s) :</label> <select
+				id="acteurs" name="acteurs" multiple>
+					<option th:each="acteur : ${films.acteurs}" th:value="${acteur.id}"
+						th:text="${acteur.nom} + ' ' + ${acteur.prenom}"></option>
+			</select></li>
+			<li><label for="idSynopsis">Synopsis :</label> <textarea
+					name="synopsis" th:id="idSynopsis" th:text="${films.synopsis}"></textarea>
+			</li>
+
+		</ul>
+	</form>
+</body>
+<footer th:replace="~{fragments/fragment-piedpage::piedpage}"></footer>
+</html>

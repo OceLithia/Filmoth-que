@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Créer</title>
+<link rel="icon" th:href="@{/img/logoENI.png}" />
+<link rel="stylesheet" th:href="@{/css/style.css}" />
+<link rel="stylesheet" th:href="@{/css/tp-contexte.css}" />
+<link
+	href="https://fonts.googleapis.com/css2?family=Eater&family=Potta+One&family=Rubik+Glitch&display=swap"
+	rel="stylesheet">
+</head>
+<div th:replace="~{fragments/fragment-entete::entete}"></div>
+<body>
+<div class="create-form">
+	<form th:action="@{/films/creer}" method="post" th:object="${film}" >
+	<div th:if="${#fields.hasErrors('*')}">
+			<h2 class="error-gen">Veuillez vérifier vos données</h2>
+			<ul th:if="${#fields.hasGlobalErrors()}">
+				<li th:each="e: ${#fields.globalErrors()}" th:text="${e}"></li>
+			</ul>
+		</div>
+		<h1>Création d'un film</h1>
+		<ul>
+			<li><label for="idGenre">Genre</label> <select
+				th:field="*{genre}" id="idGenre" >
+					<option th:each="g : ${genresSession}" th:value="${g.id}"
+						th:text="${g.titre}"></option>
+			</select>
+			<div th:replace="~{fragments/fragment-error :: frag-error('genre')}"></div></li>
+			<li><label for="idTitre">Titre</label> <input id="idTitre"
+				type="text" th:field="*{titre}" />
+				<div th:replace="~{fragments/fragment-error :: frag-error('titre')}"></div></li>
+			<li><label for="idAnnee">Année de sortie</label> <input
+				id="idAnnee" type="number" th:field="*{annee}" />
+				<div th:replace="~{fragments/fragment-error :: frag-error('annee')}"></div>
+			</li>
+				<li><label for="idRealisateur">Réalisateur</label>
+				<select th:field="*{realisateur}" id="idRealisateur" >
+				<option th:each="p : ${participantsSession}" th:value="${p.id}"
+					th:text="${p.nom + ' ' + p.prenom}"></option>
+				</select><div th:replace="~{fragments/fragment-error :: frag-error('realisateur')}"></div>
+			</li>
+			</li>
+				<li><label for="idActeur">Acteurs</label>
+				<select th:field="*{acteurs}" id="idActeur" multiple="multiple">
+				<option th:each="a : ${participantsSession}" th:value="${a.id}"
+					th:text="${a.nom + ' ' + a.prenom}"></option>
+				</select><div th:replace="~{fragments/fragment-error :: frag-error('acteurs')}"></div>
+			</li>
+			<li><label for="idDuree">Durée</label> <input id="idDuree"
+				type="number" th:field="*{duree}"/>
+				<div th:replace="~{fragments/fragment-error :: frag-error('duree')}"></div>
+			</li>
+			<li>
+			<label for="idSynopsis">Synopsis</label> <textarea
+					id="idSynopsis" rows="5" cols="30" th:field="*{synopsis}" ></textarea>
+					<div th:replace="~{fragments/fragment-error :: frag-error('synopsis')}"></div>
+			</li>
+
+			<li>
+				<button type="submit">Valider</button>
+			</li>
+		</ul>
+	</form>
+	</div>
+</body>
+<footer th:replace="~{fragments/fragment-piedpage::piedpage}"></footer>
+</html>

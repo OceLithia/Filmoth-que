@@ -1,0 +1,51 @@
+@charset "UTF-8";
+
+/* Style pour la table des films */
+table {
+    width: 80%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background-color: #53354F;
+    color: #8A7587;
+    margin-bottom: 3.5rem;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #e6d2a6;
+}
+
+th {
+    font-size: 1.2rem;
+    background-color: #42213D;
+}
+
+td {
+    font-size: 1rem;
+}
+
+a {
+    color: #846781;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #e8d3aa;
+}
+
+/* Responsivité du tableau */
+@media screen and (max-width: 768px) {
+    table, th, td {
+        display: block;
+        width: 100%;
+    }
+    th {
+        text-align: center;
+    }
+    td {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+}
+

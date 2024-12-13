@@ -1,0 +1,8 @@
+<nav th:fragment="entete">
+	<a th:href="@{/}"><img src="/img/logoFilmotheque.png" alt="logo filmotheque" /></a>
+	<a th:href="@{/films}">Films</a>
+	<a sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{/films/creer}">Créer</a>
+	<!-- <a th:href="@{/contexte}">Contextes</a> -->
+	<a sec:authorize="!isAuthenticated()" th:href="@{/login}">Se connecter</a>
+	<a sec:authorize="isAuthenticated()" th:href="@{/logout}">Se déconnecter</a>
+</nav>

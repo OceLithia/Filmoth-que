@@ -1,0 +1,115 @@
+@charset "UTF-8";
+
+/* Style général du corps de la page */
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #371B32; /* Couleur principale de fond */
+    color: #8A7587; /* Couleur principale du texte */
+    font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+body {
+    font-style: normal;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centrer le formulaire verticalement */
+    align-items: center;     /* Centrer le formulaire horizontalement */
+    text-align: center;
+    width: 100%;
+    font-family: "Potta One", system-ui;
+}
+
+/* Formulaire de connexion */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #63475F; /* Fond des champs */
+    padding: 20px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 400px;
+    box-sizing: border-box;
+}
+
+/* Titre du formulaire */
+h2 {
+    font-size: 1.8rem;
+    color: #8A7587;
+    margin-bottom: 20px;
+}
+
+/* Liens et autres éléments de la page */
+ul {
+    list-style-type: none;
+    padding: 0;
+    width: 100%;
+}
+
+li {
+    margin-bottom: 1.2rem; /* Espacement entre les champs */
+}
+
+/* Champs de saisie */
+input {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    border-radius: 8px;
+    background-color: #53354F; /* Fond des champs */
+    color: #8A7587; /* Texte doux */
+    border: none;
+    text-align: center;
+}
+
+input:focus {
+    outline: none;
+    background-color: #E1CA96; /* Fond au focus */
+    border-color: #8A7587;
+}
+
+/* Bouton de connexion */
+button {
+    background-color: #53354F;
+    color: #8A7587;
+    font-family: "Potta One", system-ui;
+    font-size: 1.1rem;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #42213D; /* Teinte plus riche au survol */
+    color: #7E677B;
+    transform: scale(1.05);
+}
+
+/* Adaptation responsive */
+@media screen and (max-width: 768px) {
+    form {
+        width: 80vw;
+    }
+    input, button {
+        font-size: 4vw;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    form {
+        width: 90vw;
+    }
+    input, button {
+        font-size: 5vw;
+    }
+}

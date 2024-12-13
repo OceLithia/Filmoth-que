@@ -1,0 +1,197 @@
+@charset "UTF-8";
+
+/* Style général du corps de la page */
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #371B32; /* Couleur principale de fond */
+    color: #a695a4; /* Couleur principale du texte */
+    font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+body {
+    font-style: normal;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    font-family: "Potta One", system-ui;
+}
+
+/* Liens et navigation */
+nav {
+    color: #8A7587; /* Texte légèrement plus clair */
+    background-color: #42213D; /* Couleur profonde et chaude */
+    font-family: "Potta One", system-ui;
+    font-size: 15px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
+    border-radius: 2vw;
+}
+
+li {
+	list-style-type: none;
+}
+
+a {
+    color: #7E677B; /* Teinte harmonieuse pour les liens */
+    font-family: "Potta One", system-ui;
+    font-size: 20px;
+}
+
+a:hover {
+    color: #8A7587; /* Légère accentuation au survol */
+}
+
+/* Footer */
+footer {
+    background-color: #53354F; /* Teinte complémentaire plus riche */
+    text-align: center;
+    padding: 10px 0;
+    border-radius: 1vw;
+    width: 100%;
+    color: #7E677B; /* Harmonisé avec les liens */
+}
+
+/* Champs de formulaire et boutons */
+input, textarea, select, button {
+    display: block;
+    width: 100%;
+    max-width: 400px;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 8px;
+    background-color: #63475F; /* Fond des champs */
+    color: #8A7587; /* Texte doux */
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-size: 0.9rem;
+    text-align: center;
+    font-weight: normal;
+}
+
+button {
+    background-color: #53354F; /* Bouton plus intense */
+    color: #8A7587; /* Texte */
+    font-family: "Potta One", system-ui;
+    font-size: 1rem;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 2.5vw;
+}
+
+button:hover {
+    background-color: #42213D; /* Teinte plus riche au survol */
+    color: #7E677B; /* Texte légèrement modifié */
+    transform: scale(1.05); /* Agrandissement subtil */
+}
+
+/* Barres de défilement */
+::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: #53354F; /* Piste de défilement */
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #63475F; /* Curseur de défilement */
+    border-radius: 10px;
+    border: 2px solid #371B32; /* Contraste subtil */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #8A7587;
+}
+
+/* Spin buttons */
+input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 0;
+    background-color: #63475F;
+    border-radius: 50%;
+    border: 2px solid #8A7587;
+    width: 16px;
+    height: 16px;
+}
+
+input[type="number"]::-webkit-inner-spin-button:hover, input[type="number"]::-webkit-outer-spin-button:hover {
+    background-color: #8A7587;
+    border-color: #7E677B;
+}
+
+/* Responsivité */
+@media screen and (max-width: 768px) {
+    nav {
+        font-size: 13px;
+        flex-direction: column;
+    }
+    form {
+        width: 80vw;
+    }
+    input, textarea, label, button, select, option {
+        font-size: 4vw;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    body {
+        font-size: 1rem;
+    }
+    nav {
+        font-size: 11px;
+        padding: 1vw;
+    }
+    form {
+        width: 90vw;
+    }
+    footer {
+        font-size: 12px;
+        padding: 5px 0;
+    }
+}
+
+select option {
+    background-color: #53354F; /* Couleur de fond des options */
+    color: #8A7587; /* Couleur du texte */
+}
+
+select option:hover {
+    background-color: #42213D; /* Couleur de fond au survol */
+    color: #E1CA96; /* Couleur du texte au survol */
+}
+
+select option:checked {
+	background-color: #E1CA96;
+}
+
+select:focus{
+	outline: none;
+	border-color:border-color;
+	background-color:#E1CA96;
+}
+option {
+	background-color: #E1CA96;
+}
+
+.background-section {
+    background-image: url('/img/film-interpretation-415477081.jpg');
+    background-size: cover;
+    background-position: center;
+}

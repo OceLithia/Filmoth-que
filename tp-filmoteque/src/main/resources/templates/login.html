@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Connexion</title>
+<link rel="stylesheet" th:href="@{/css/details-films.css}" />
+<link rel="stylesheet" th:href="@{/css/style.css}" />
+<link rel="stylesheet" th:href="@{/css/login.css}" />
+<link rel="icon" th:href="@{/img/logoENI.png}" />
+</head>
+<body>
+	<form th:action="@{/login}" method="post" class="login-form">
+		<ul th:if="${param.error}">
+			<li>Veuillez renseigner un login / mot de passe correct</li>
+		</ul>
+		<h2>Se connecter</h2>
+		<ul>
+			<li><label for="">Email</label><input type="text"
+				name="username" /></li>
+			<li><label for="">Mot de passe</label><input type="password"
+				name="password" /></li>
+			<li><button type="submit">Connexion</button></li>
+		</ul>
+	</form>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Filmothèque</title>
+<link rel="icon" th:href="@{/img/logoENI.png}" />
+<link rel="stylesheet" th:href="@{/css/style.css}" />
+<link rel="stylesheet" th:href="@{/css/tp-contexte.css}" />
+<link rel="stylesheet" th:href="@{/css/details-films.css}" />
+<link
+	href="https://fonts.googleapis.com/css2?family=Eater&family=Potta+One&family=Rubik+Glitch&display=swap"
+	rel="stylesheet">
+</head>
+<div th:replace="~{fragments/fragment-entete::entete}"></div>
+<body>
+	<h1>Les films de l'ENI</h1>
+	 <table>
+        <thead>
+            <tr>
+                <th>Genre</th>
+                <th>Année</th>
+                <th>Titre</th>
+                <th>Réalisateur</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="f : ${films}">
+                <td th:text="${f.genre.titre}"></td>
+                <td th:text="${f.annee}"></td>
+                <td th:text="${f.titre}"></td>
+                <td th:text="${f.realisateur.nom} + ' ' + ${f.realisateur.prenom}"></td>
+                <td><a th:href="@{/films/detail(id=${f.id})}">Détails</a></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+<footer th:replace="~{fragments/fragment-piedpage::piedpage}"></footer>
+</html>
